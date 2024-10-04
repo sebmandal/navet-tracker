@@ -14,8 +14,8 @@ def run():
         return
 
     print(f"Open positions at {b}: {p}")
-    # n = Notification()
-    # n.notify(b, p)
+    n = Notification()
+    n.notify(b, p)
 
 
 def main():
