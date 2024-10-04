@@ -18,9 +18,18 @@ def run():
         scraper = EventScraper(full_url)
         event_title = scraper.get_event_title()
         open_spots = scraper.get_open_spots()
+        date_time = scraper.get_event_date_time()
+        location = scraper.get_event_location()
+
         if open_spots != "0":
             open_events_summary.append(
-                {"title": event_title, "open_spots": open_spots, "url": full_url}
+                {
+                    "title": event_title,
+                    "open_spots": open_spots,
+                    "url": full_url,
+                    "date_time": date_time,
+                    "location": location,
+                }
             )
 
     if not open_events_summary:
@@ -30,8 +39,11 @@ def run():
 
     else:
         for event in open_events_summary:
-            message += f"Event: [{event['title']}](<{event['url']}>)\n"
-            message += f"Open Spots: {event['open_spots']}\n"
+            # message += f"Tittel: [{event['title']}](<{event['url']}>)\n"
+            message += f"Tittel: [{event['title']}]({event['url']})\n"
+            message += f"Ledige plasser: {event['open_spots']}\n"
+            message += f"Dato og tidspunkt: {event['date_time']}\n"
+            message += f"Lokasjon: {event['location']}\n\n"
 
     notifier.notify(message)
 
