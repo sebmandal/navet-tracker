@@ -50,7 +50,7 @@ We welcome contributions! To contribute:
 3. Make your changes and commit them:
    .. code-block:: bash
 
-       git commit -m "Add your feature"
+       git commit -m "feat: add your feature or description in lowercase text"
 4. Push to the branch:
    .. code-block:: bash
 
