@@ -36,7 +36,7 @@ To start using Navet Tracker, run the main script:
 
    python main.py
 
-For more detailed usage instructions, refer to the `USAGE.md` file.
+For more detailed usage instructions, refer to the `USAGE.md` file. (coming soon)
 
 Contributing
 ------------
@@ -57,7 +57,7 @@ We welcome contributions! To contribute:
        git push origin feature/your-feature
 5. Open a pull request.
 
-For more detailed guidelines, refer to the `CONTRIBUTING.md` file.
+For more detailed guidelines, refer to the `CONTRIBUTING.md` file. (coming soon)
 
 License
 -------
