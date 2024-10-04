@@ -22,7 +22,7 @@ class DataSucker:
     def get_participants(self, url: str) -> int:
         res = requests.get(url)
         data = res.text
-        tree = html.fromstring(data)
+        tree = html.fromstring(data.strip())
         participants = tree.xpath(
             '//*[@id="app"]/div/div/div[1]/div/div[2]/div[2]/span[3]/text()'
         )
