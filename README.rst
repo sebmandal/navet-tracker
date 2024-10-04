@@ -1,37 +1,47 @@
-Project Title
+Navet Tracker
 =============
 
-Brief description of the project.
+Navet Tracker is a tool designed to help you track and manage your projects efficiently.
 
 Prerequisites
 -------------
-- List any prerequisites or dependencies needed for the project.
+- Python 3.x
+- Additional dependencies listed in `requirements.txt`
 
 Installation
 ------------
 1. Clone the repository:
    .. code-block:: bash
 
-       git clone https://github.com/yourusername/yourproject.git
+       git clone https://github.com/sebmandal/navet-tracker.git
 2. Navigate to the project directory:
    .. code-block:: bash
 
-       cd yourproject
-3. Install the required dependencies:
+       cd navet-tracker
+3. (Optional) Create a virtual environment:
+   .. code-block:: bash
+
+       python3 -m venv venv
+       source venv/bin/activate
+4. Install the required dependencies:
    .. code-block:: bash
 
        pip install -r requirements.txt
 
 Usage
 -----
-Provide examples of how to use the project.
+To start using Navet Tracker, run the main script:
 
 .. code-block:: bash
 
-   python your_script.py
+   python main.py
+
+For more detailed usage instructions, refer to the `USAGE.md` file.
 
 Contributing
 ------------
+We welcome contributions! To contribute:
+
 1. Fork the repository.
 2. Create a new branch:
    .. code-block:: bash
@@ -47,6 +57,8 @@ Contributing
        git push origin feature/your-feature
 5. Open a pull request.
 
+For more detailed guidelines, refer to the `CONTRIBUTING.md` file.
+
 License
 -------
-MIT
+This project is licensed under the MIT License. See the `LICENSE` file for more details.
