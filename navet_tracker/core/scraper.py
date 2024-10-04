@@ -5,9 +5,6 @@ from lxml import html
 
 
 class DataSucker:
-    def __init__(self) -> None:
-        pass
-
     def next_event(self) -> str:
         url = "https://ifinavet.no"
         res = requests.get(url)
