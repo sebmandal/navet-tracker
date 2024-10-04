@@ -2,8 +2,6 @@ from navet_tracker.web import OpenEventFetcher, EventScraper
 from navet_tracker.notifications import Notification
 from navet_tracker.scheduler import Scheduler
 
-per_day = 1
-
 
 def run():
     notifier = Notification()
@@ -34,12 +32,11 @@ def run():
 
     if not open_events_summary:
         print("No open events found.")
-        message += f"No open events right now. Check back in {24 // per_day} hours."
-        # return # Uncomment this line to prevent sending a message when there are no open events.
+        message += f"No open events right now. Check back later."
+        # return  # Uncomment/comment this line to toggle sending a message when there are no open events.
 
     else:
         for event in open_events_summary:
-            # message += f"Tittel: [{event['title']}](<{event['url']}>)\n"
             message += f"Tittel: [{event['title']}]({event['url']})\n"
             message += f"Ledige plasser: {event['open_spots']}\n"
             message += f"Dato og tidspunkt: {event['date_time']}\n"
@@ -49,8 +46,8 @@ def run():
 
 
 def main():
-    scheduler_interval = (24 / per_day) * 60 * 60
-    s = Scheduler(run, scheduler_interval)
+    schedule_times = ["12:05", "00:00"]
+    s = Scheduler(run, schedule_times)
     s.start()
 
 
