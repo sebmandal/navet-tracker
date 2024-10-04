@@ -23,11 +23,13 @@ class EventScraper:
     def get_event_date_time(self):
         event_meta = self.soup.find_all("div", class_="event-meta")
         date_time = event_meta[0].find_all("span")[2]
-        return date_time.text.strip()
+        date_time = date_time.text.strip()
+        date_time = date_time.replace("kl. ", " klokken ")
+        return date_time
 
     def get_event_location(self):
         location = self.soup.find("span", class_="icon-location")
-        return location.find_next_sibling("span").text
+        return location.find_next_sibling("span").find_next_sibling("span").text
 
     def get_food(self):
         food = self.soup.find("span", class_="icon-spoon-knife")
