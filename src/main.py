@@ -2,13 +2,14 @@ from navet_tracker.web import OpenEventFetcher, EventScraper
 from navet_tracker.notifications import Notification
 from navet_tracker.scheduler import Scheduler
 
-per_day = 12
+per_day = 1
 
 
 def run():
     notifier = Notification()
-    fetcher = OpenEventFetcher(url="https://ifinavet.no/arrangementer/2024/host")
+    message = ""
 
+    fetcher = OpenEventFetcher(url="https://ifinavet.no/arrangementer/2024/host")
     open_event_urls = fetcher.get_open_event_urls()
     open_events_summary = []
 
@@ -24,18 +25,13 @@ def run():
 
     if not open_events_summary:
         print("No open events found.")
-        notifier.notify(
-            f"No open events right now. Check back in {24 // per_day} hours."
-        )
-        return
+        message += f"No open events right now. Check back in {24 // per_day} hours."
+        # return # Uncomment this line to prevent sending a message when there are no open events.
 
-    message = "-" * 40 + "\n"
-    for event in open_events_summary:
-        if event["open_spots"] == "0":
-            continue
-        message += f"Event: [{event['title']}](<{event['url']}>)\n"
-        message += f"Open Spots: {event['open_spots']}\n"
-        message += "-" * 40 + "\n"
+    else:
+        for event in open_events_summary:
+            message += f"Event: [{event['title']}](<{event['url']}>)\n"
+            message += f"Open Spots: {event['open_spots']}\n"
 
     notifier.notify(message)
 
