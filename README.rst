@@ -34,7 +34,7 @@ To start using Navet Tracker, run the main script:
 
 .. code-block:: bash
 
-   python main.py
+   python src/main.py
 
 For more detailed usage instructions, refer to the `USAGE.md` file. (coming soon)
 
