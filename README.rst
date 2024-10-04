@@ -1,7 +1,7 @@
 Navet Tracker
 =============
 
-Navet Tracker is a tool designed to help you track and manage your projects efficiently.
+Navet Tracker is a tool designed to track company presentations on ifinavet.no.
 
 Prerequisites
 -------------
@@ -34,7 +34,7 @@ To start using Navet Tracker, run the main script:
 
 .. code-block:: bash
 
-   python main.py
+   python src/main.py
 
 For more detailed usage instructions, refer to the `USAGE.md` file. (coming soon)
 
@@ -50,7 +50,7 @@ We welcome contributions! To contribute:
 3. Make your changes and commit them:
    .. code-block:: bash
 
-       git commit -m "feat: add your feature or description in lowercase text"
+       git commit -m "feat(scope): add your feature or description in lowercase text"
 4. Push to the branch:
    .. code-block:: bash
 
